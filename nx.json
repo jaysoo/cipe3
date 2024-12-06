@@ -15,7 +15,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "675316a977c53f60a4eafd00",
+  "nxCloudId": "67531e085bd5bcfe60ffddcb",
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",
@@ -28,30 +28,11 @@
         "typecheckTargetName": "typecheck"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
-  "targetDefaults": {
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
-    }
-  },
+  "targetDefaults": { "e2e-ci--**/*": { "dependsOn": ["^build"] } },
   "generators": {
     "@nx/react": {
       "application": {
@@ -60,13 +41,8 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
+      "component": { "style": "css" },
+      "library": { "style": "css", "linter": "eslint" }
     }
   }
 }
